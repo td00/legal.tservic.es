@@ -2,21 +2,21 @@
 if(isset($_GET['lang'])) { //checks if "?lang=" is set in the url
     $site_lang = $_GET['lang']; //setting the language
 } else { //if there isn't anything in the header, just die already!
-    die(<pre>No language selected. abort!</pre>); 
+    die(No language selected. abort!); 
 }
 if(isset($_GET['type'])) { //checks if "?type=" is set in the url
     $site_type = $_GET['type']; //setting the type
 } else { //if there isn't anything in the header, just die already!
-    die(<pre>No type selected. abort!</pre>);
+    die(No type selected. abort!);
 }
 if(isset($_GET['page'])) { //checks if "?page=" is set in the url
     $site_name = $_GET['page']; //setting the page
 } else { //if there isn't anything in the header, just die already!
-    die(<pre>No page selected. abort!</pre>);
+    die(No page selected. abort!);
 }
-
 $site_title = $site_name + " - " + $site_type + " - " + $site_lang; //setting the title;
 $site_url = $site_name + "/" + $site_type + "/" + $site_lang + ".html"; //setting the url;
+
 ?>
 <html>
 <head>
