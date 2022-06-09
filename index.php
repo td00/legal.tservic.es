@@ -32,7 +32,7 @@ if(isset($_GET['lang'])) { //checks if "?lang=" is set in the url
       <br>
       <a>Bitte w&auml;hlen Sie eine Sprache, um die </a><?php echo $site_type_long; ?><a> für <?php echo $site_name ?> zu sehen.</a>
       <br>
-      <a href="'.$_SERVER["REQUEST_URI"].'&lang=de">Deutsch</a><br><a href="'.$_SERVER["REQUEST_URI"].'&lang=en">English</a>
+      <?php echo '<a href="'.$_SERVER["REQUEST_URI"].'&lang=de">Deutsch</a><br><a href="'.$_SERVER["REQUEST_URI"].'&lang=en">English</a>';?>
       <?php
       die(); 
 }
