@@ -43,13 +43,27 @@ if($site_lang == "de") {
 } else {
     die("<pre>No valid language. abort!</pre>");
 }
-$site_title = $site_name." - ".$site_type_long." - ".$site_lang_long; //setting the title;
-$site_url = $site_name."/".$site_type."/".$site_lang.".html"; //setting the url;
+$site_name_check = $site_name."/valid";
+if (file_exists($site_name_check))
+{
+    $site_title = $site_name." - ".$site_type_long." - ".$site_lang_long; //setting the title;
+    $site_url = $site_name."/".$site_type."/".$site_lang.".html"; //setting the url;
+} else {
+    die ("invalid site name");
+}
+
+if (file_exists($site_url)) 
+{
+    include $site_url;
+}
+else 
+{
+    die("The site you're trying to open is invalid. / Die Seite, die Sie versuchen zu &ouml;ffnen, ist ung&uuml;ltig.");
+}
+
 
 
 ?>
-
-<?php include $site_url; ?>
 <script src="res/js/bootstrap.min.js"></script>
 </body>
 </html>
