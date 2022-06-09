@@ -14,8 +14,8 @@ if(isset($_GET['page'])) { //checks if "?page=" is set in the url
 } else { //if there isn't anything in the header, just die already!
     die("<pre>No page selected. abort!</pre>");
 }
-$site_title = $site_name + " - " + $site_type + " - " + $site_lang; //setting the title;
-$site_url = $site_name + "/" + $site_type + "/" + $site_lang + ".html"; //setting the url;
+$site_title = $site_name." - ".$site_type." - ".$site_lang; //setting the title;
+$site_url = $site_name."/".$site_type."/".$site_lang.".html"; //setting the url;
 
 
 ?>
