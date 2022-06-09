@@ -14,6 +14,7 @@ if(isset($_GET['type'])) { //checks if "?type=" is set in the url
     $site_type = $_GET['type']; //putting it in a more memorable variable
 } else { //if there is no type selector present just present this simple page with the type selector!
     ?>
+    <head><title><?php echo $site_title; ?></title></head>
     <a>Do you want to see the Privacy policy or Imprint / Legal Notice for <b><?php echo $site_name ?></b>?</a>
     <br>
     <a>M&ouml;chtest du die Datenschutzerkl&auml;rung oder das Impressum für <b><?php echo $site_name ?></b> sehen?</a>
@@ -37,6 +38,7 @@ if(isset($_GET['lang'])) { //checks if "?lang=" is set in the url
     $site_lang = $_GET['lang']; //putting it in a more memorable variable
   } else { //if there is no language selector present just present this simple page with the language selector!
       ?>
+      <head><title><?php echo $site_title; ?></title></head>
       <a>Please choose a language to see the <i><?php echo $site_type_long; ?></i> for <b><?php echo $site_name ?></b>.</a>
       <br>
       <a>Bitte w&auml;hle eine Sprache, um die <i><?php echo $site_type_long; ?></i> f&uuml;r <b><?php echo $site_name ?></b> zu sehen.</a>
