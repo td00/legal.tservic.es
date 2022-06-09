@@ -5,15 +5,22 @@
 </head>
 <body>
 <?php
+if(isset($_GET['page'])) { //checks if "?page=" is set in the url
+    $site_name = $_GET['page']; //setting the page
+} else { //if there isn't any page selected, thats considered below the bare minimum.
+    die("<pre>No page selected. abort!</pre>");
+}
 if(isset($_GET['type'])) { //checks if "?type=" is set in the url
     $site_type = $_GET['type']; //setting the type
 } else { //if there isn't anything in the header, just die already!
-    die("<pre>No type selected. abort!</pre>");
-}
-if(isset($_GET['page'])) { //checks if "?page=" is set in the url
-    $site_name = $_GET['page']; //setting the page
-} else { //if there isn't anything in the header, just die already!
-    die("<pre>No page selected. abort!</pre>");
+    ?>
+    <a>Do you want to see the Privacy policy or Imprint / Legal Notice for <?php echo $site_name ?>?</a>
+    <br>
+    <a>M&ouml;chtest du die Datenschutzerkl&auml;rung oder das Impressum für <?php echo $site_name ?> sehen?</a>
+    <br>
+    <?php echo '<a href="'.$_SERVER["REQUEST_URI"].'&type=imprint">Legal Notice / Imprint / Impressum</a><br><a href="'.$_SERVER["REQUEST_URI"].'&type=privacy">Privacy policy / Datenschutzerkl&auml;rung</a>';?>
+    <?php
+    die(); 
 }
 if($site_type == "privacy") {
     $site_type_long = "Privacy policy / Datenschutzerkl&auml;rung";
@@ -30,7 +37,7 @@ if(isset($_GET['lang'])) { //checks if "?lang=" is set in the url
       ?>
       <a>Please choose a language to see the </a><?php echo $site_type_long; ?><a> for <?php echo $site_name ?>.</a>
       <br>
-      <a>Bitte w&auml;hlen Sie eine Sprache, um die </a><?php echo $site_type_long; ?><a> für <?php echo $site_name ?> zu sehen.</a>
+      <a>Bitte w&auml;hle eine Sprache, um die </a><?php echo $site_type_long; ?><a> für <?php echo $site_name ?> zu sehen.</a>
       <br>
       <?php echo '<a href="'.$_SERVER["REQUEST_URI"].'&lang=de">Deutsch</a><br><a href="'.$_SERVER["REQUEST_URI"].'&lang=en">English</a>';?>
       <?php
