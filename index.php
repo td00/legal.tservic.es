@@ -35,7 +35,7 @@ if(isset($_GET['lang'])) { //checks if "?lang=" is set in the url
     $site_lang = $_GET['lang']; //printing the next hop
   } else { //if there isn't anything in the header, just die already!
       ?>
-      <>Please choose a language to see the <i><?php echo $site_type_long; ?></i> for <b><?php echo $site_name ?></b>.</a>
+      <a>Please choose a language to see the <i><?php echo $site_type_long; ?></i> for <b><?php echo $site_name ?></b>.</a>
       <br>
       <a>Bitte w&auml;hle eine Sprache, um die <i><?php echo $site_type_long; ?></i> f&uuml;r <b><?php echo $site_name ?></b> zu sehen.</a>
       <br>
