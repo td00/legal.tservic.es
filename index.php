@@ -28,8 +28,8 @@ if($site_type == "privacy") {
     $site_type_long = "Privacy policy / Datenschutzerkl&auml;rung";
 } elseif($site_type == "imprint") {
     $site_type_long = "Legal Notice / Imprint / Impressum";
-//} elseif($site_type == "terms") {
-//    $site_type_long = "Terms of Use / Nutzungsbedingungen";
+} elseif($site_type == "terms") {
+    $site_type_long = "Terms of Use / Nutzungsbedingungen";
 } else {
     die("<pre>No valid type. abort!</pre>"); //if its not a valid type, we don't want it!
 }
