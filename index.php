@@ -17,12 +17,17 @@ if(isset($_GET['page'])) { //checks if "?page=" is set in the url
 $site_title = $site_name + " - " + $site_type + " - " + $site_lang; //setting the title;
 $site_url = $site_name + "/" + $site_type + "/" + $site_lang + ".html"; //setting the url;
 
+
 ?>
 <html>
 <head>
     <title><?php echo $site_title; ?></title>
     <link rel="stylesheet" href="res/css/bootstrap.min.css" crossorigin="anonymous">
 </head>
+<body>
+<?php echo $site_title; ?>
+<?php echo $site_url; ?>
 <?php include $site_url; ?>
 <script src="res/js/bootstrap.min.js"></script>
+</body>
 </html>
