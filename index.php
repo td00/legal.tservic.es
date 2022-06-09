@@ -3,7 +3,8 @@ $die_lang='<a href="'.$_SERVER["REQUEST_URI"].'?lang=de">Deutsch</a><br><a href=
 if(isset($_GET['lang'])) { //checks if "?lang=" is set in the url
     $site_lang = $_GET['lang']; //setting the language
 } else { //if there isn't anything in the header, just die already!
-    exit(echo $die_lang); 
+    echo $die_lang;
+    die(); 
 }
 if(isset($_GET['type'])) { //checks if "?type=" is set in the url
     $site_type = $_GET['type']; //setting the type
