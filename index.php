@@ -5,13 +5,6 @@
 </head>
 <body>
 <?php
-$die_lang='<a href="'.$_SERVER["REQUEST_URI"].'&lang=de">Deutsch</a><br><a href="'.$_SERVER["REQUEST_URI"].'&lang=en">English</a>';
-if(isset($_GET['lang'])) { //checks if "?lang=" is set in the url
-    $site_lang = $_GET['lang']; //setting the language
-} else { //if there isn't anything in the header, just die already!
-    echo $die_lang;
-    die(); 
-}
 if(isset($_GET['type'])) { //checks if "?type=" is set in the url
     $site_type = $_GET['type']; //setting the type
 } else { //if there isn't anything in the header, just die already!
@@ -30,6 +23,18 @@ if($site_type == "privacy") {
     $site_type_long = "Terms of Use / Nutzungsbedingungen";
 } else {
     die("<pre>No valid type. abort!</pre>");
+}
+if(isset($_GET['lang'])) { //checks if "?lang=" is set in the url
+    $site_lang = $_GET['lang']; //printing the next hop
+  } else { //if there isn't anything in the header, just die already!
+      ?>
+      <a>Please choose a language to see the </a><?php echo $site_type_long; ?><a> for <?php echo $site_name ?>.</a>
+      <br>
+      <a>Bitte w&auml;hlen Sie eine Sprache, um die </a><?php echo $site_type_long; ?><a> für <?php echo $site_name ?> zu sehen.</a>
+      <br>
+      <a href="'.$_SERVER["REQUEST_URI"].'&lang=de">Deutsch</a><br><a href="'.$_SERVER["REQUEST_URI"].'&lang=en">English</a>
+      <?php
+      die(); 
 }
 if($site_lang == "de") {
     $site_lang_long = "Deutsch";
