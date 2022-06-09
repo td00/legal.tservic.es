@@ -1,6 +1,5 @@
 <html>
 <head>
-    <title><?php echo $site_title; ?></title>
     <link rel="stylesheet" href="res/css/bootstrap.min.css" crossorigin="anonymous">
 </head>
 <body>
@@ -10,6 +9,7 @@ if(isset($_GET['page'])) { //checks if "?page=" is set in the url
 } else { //if there isn't any page selected, thats considered below the bare minimum and we just die..
     die("<pre>No page selected. abort!</pre>");
 }
+$site_title = $site_name; //setting the title;
 if(isset($_GET['type'])) { //checks if "?type=" is set in the url
     $site_type = $_GET['type']; //putting it in a more memorable variable
 } else { //if there is no type selector present just present this simple page with the type selector!
@@ -32,6 +32,7 @@ if($site_type == "privacy") {
 } else {
     die("<pre>No valid type. abort!</pre>"); //if its not a valid type, we don't want it!
 }
+$site_title = $site_name." - ".$site_type_long; //setting the title;
 if(isset($_GET['lang'])) { //checks if "?lang=" is set in the url
     $site_lang = $_GET['lang']; //putting it in a more memorable variable
   } else { //if there is no language selector present just present this simple page with the language selector!
@@ -52,6 +53,7 @@ if($site_lang == "de") {
 } else {
     die("<pre>No valid language. abort!</pre>");  // again, if it's not a valid language, we don't want it!
 }
+$site_title = $site_name." - ".$site_type_long." - ".$site_lang_long; //setting the title;
 $site_name_check = $site_name."/valid"; //generate a variable we can check with file_exists below
 if (file_exists($site_name_check)) //checks if the file exists
 {
@@ -75,4 +77,5 @@ else
 ?>
 <script src="res/js/bootstrap.min.js"></script>
 </body>
+<head><title><?php echo $site_title; ?></title></head>
 </html>
