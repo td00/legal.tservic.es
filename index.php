@@ -14,7 +14,23 @@ if(isset($_GET['page'])) { //checks if "?page=" is set in the url
 } else { //if there isn't anything in the header, just die already!
     die("<pre>No page selected. abort!</pre>");
 }
-$site_title = $site_name." - ".$site_type." - ".$site_lang; //setting the title;
+if($site_type == "privacy") {
+    $site_type_long = "Privacy policy / Datenschutzerkl&auml;rung";
+} elseif($site_type == "imprint") {
+    $site_type_long = "Legal Notice / Imprint / Impressum";
+} elseif($site_type == "terms") {
+    $site_type_long = "Terms of Use / Nutzungsbedingungen";
+} else {
+    die("<pre>No valid type. abort!</pre>");
+}
+if($site_lang == "de") {
+    $site_lang_long = "Deutsch";
+} elseif($site_lang == "en") {
+    $site_lang_long = "English";
+} else {
+    die("<pre>No valid language. abort!</pre>");
+}
+$site_title = $site_name." - ".$site_type_long." - ".$site_lang_long; //setting the title;
 $site_url = $site_name."/".$site_type."/".$site_lang.".html"; //setting the url;
 
 
@@ -25,8 +41,6 @@ $site_url = $site_name."/".$site_type."/".$site_lang.".html"; //setting the url;
     <link rel="stylesheet" href="res/css/bootstrap.min.css" crossorigin="anonymous">
 </head>
 <body>
-<?php echo $site_title; ?>
-<?php echo $site_url; ?>
 <?php include $site_url; ?>
 <script src="res/js/bootstrap.min.js"></script>
 </body>
