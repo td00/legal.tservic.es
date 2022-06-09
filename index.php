@@ -2,7 +2,7 @@
 if(isset($_GET['lang'])) { //checks if "?lang=" is set in the url
     $site_lang = $_GET['lang']; //setting the language
 } else { //if there isn't anything in the header, just die already!
-    die("<pre>No language selected. abort!</pre>"); 
+    die('<a href="'echo $_SERVER["REQUEST_URI"];'?lang=de">Deutsch</a><br><a href="'echo $_SERVER["REQUEST_URI"];'?lang=en">English</a>'); 
 }
 if(isset($_GET['type'])) { //checks if "?type=" is set in the url
     $site_type = $_GET['type']; //setting the type
