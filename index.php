@@ -19,8 +19,14 @@ if(isset($_GET['type'])) { //checks if "?type=" is set in the url
     <br>
     <a>M&ouml;chtest du die Datenschutzerkl&auml;rung oder das Impressum für <b><?php echo $site_name ?></b> sehen?</a>
     <br>
-    <?php echo '<a href="'.$_SERVER["REQUEST_URI"].'&type=imprint">Legal Notice / Imprint / Impressum</a><br><a href="'.$_SERVER["REQUEST_URI"].'&type=privacy">Privacy policy / Datenschutzerkl&auml;rung</a><br><i><a href="'.$_SERVER["REQUEST_URI"].'&type=terms">AGB / Terms of Services</a></i>';?>
-    <?php
+    <?php echo '<a href="'.$_SERVER["REQUEST_URI"].'&type=imprint">Legal Notice / Imprint / Impressum</a><br><a href="'.$_SERVER["REQUEST_URI"].'&type=privacy">Privacy policy / Datenschutzerkl&auml;rung</a><br>';
+    $tosexists = $site_name."/terms/valid"; //generate a variable we can check with file_exists below
+    if (file_exists($tosexists)) //checks if the file exists
+    {
+        <?php echo '<i><a href="'.$_SERVER["REQUEST_URI"].'&type=terms">AGB / Terms of Services</a></i>';
+    } else {
+        ?><br><?php
+    }
     die(); //die afterwards to not print something we dont want printed.
 }
 //this following part generates longer names for the short "types"
