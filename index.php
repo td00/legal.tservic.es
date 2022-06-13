@@ -19,7 +19,7 @@ if(isset($_GET['type'])) { //checks if "?type=" is set in the url
     <br>
     <a>M&ouml;chtest du die Datenschutzerkl&auml;rung oder das Impressum für <b><?php echo $site_name ?></b> sehen?</a>
     <br>
-    <?php echo '<a href="'.$_SERVER["REQUEST_URI"].'&type=imprint">Legal Notice / Imprint / Impressum</a><br><a href="'.$_SERVER["REQUEST_URI"].'&type=privacy">Privacy policy / Datenschutzerkl&auml;rung</a>';?>
+    <?php echo '<a href="'.$_SERVER["REQUEST_URI"].'&type=imprint">Legal Notice / Imprint / Impressum</a><br><a href="'.$_SERVER["REQUEST_URI"].'&type=privacy">Privacy policy / Datenschutzerkl&auml;rung</a><br><i><a href="'.$_SERVER["REQUEST_URI"].'&type=terms">AGB / Terms of Services</a></i>';?>
     <?php
     die(); //die afterwards to not print something we dont want printed.
 }
