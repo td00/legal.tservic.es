@@ -23,7 +23,7 @@ if(isset($_GET['type'])) { //checks if "?type=" is set in the url
     $tosexists = $site_name."/terms/valid"; //generate a variable we can check with file_exists below
     if (file_exists($tosexists)) //checks if the file exists
     {
-        echo '<i><a href="'.$_SERVER["REQUEST_URI"].'&type=terms">AGB / Terms of Services</a></i>';
+        echo '<a href="'.$_SERVER["REQUEST_URI"].'&type=terms">AGB / Terms of Services</a><hr>';
     } else {
         echo '<hr>';
     }
