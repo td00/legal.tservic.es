@@ -7,7 +7,7 @@
 if(isset($_GET['page'])) { //checks if "?page=" is set in the url
     $site_name = $_GET['page']; //putting it in a more memorable variable
 } else { //if there isn't any page selected, thats considered below the bare minimum and we just die..
-    die("<pre>No page selected. go to default!</pre><meta http-equiv="refresh" content="0; URL=/?page=thiesmueller.de">");
+    die('<pre>No page selected. go to default!</pre><meta http-equiv="refresh" content="0; URL=/?page=thiesmueller.de">');
 }
 $site_title = $site_name; //setting the title;
 if(isset($_GET['type'])) { //checks if "?type=" is set in the url
