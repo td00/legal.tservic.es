@@ -81,7 +81,6 @@ else
 }
 
 
-
 ?>
 <script src="res/js/bootstrap.min.js"></script>
 </body>
